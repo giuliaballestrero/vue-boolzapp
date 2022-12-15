@@ -3,7 +3,6 @@ main {
 }
 
 .small-col {
- height: 90vh;
  border: 1px solid white;
 }
 
@@ -12,12 +11,44 @@ main {
 } 
 
 #my-account-wrapper,
-#my-chat-wrapper {
+#my-chat-wrapper,
+#my-chat-text,
+.alerts
+ {
     border: 1px solid white;
     height: 60px;
 
 }
 
+#my-avatar,
+#my-chat-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
 i {
     padding: 0 .5rem;
+}
+
+.alerts {
+    background-color: #8edafc;
+}   
+
+.alerts p {
+    margin-bottom: 0;
+    font-size: .8rem;
+}
+
+.search-bar input {
+width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#my-chat-container {
+    background-image: url(../img/mine.jpg);
+    height: 800px;
 }

@@ -23,10 +23,11 @@
         <main>
             <div class="container py-5">
                 <div class="row">
-                    <div class="col-4 vh-100 small-col">
+                    <div class="col-4 small-col">
                         <div id="my-account-wrapper" class="col-12 d-flex justify-content-between align-items-center">
-                            <div class="my-account col-6">
-                                <!--inserire user photo-->
+                            <div class="my-account col-6 d-flex">
+                                <img id="my-avatar" class="ms-2" src="./img/avatar_io.jpg" alt="my user image">
+                                <p class="pt-2 px-2">Sofia</p>
                             </div>
 
                             <div class="my-tools col-6 text-end">
@@ -34,16 +35,40 @@
                                 <i class="fa-solid fa-message"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
-
                         </div>
+
+                        <div class="alerts d-flex">
+                            <i class="fa-regular fa-bell-slash fa-lg"></i>
+                            <div>
+                                <p>Ricevi Notifiche di  nuovi messaggi</p>
+                                <p class="text-decoration-underline">Attiva notifiche desktop</p>
+                            </div>
+                        </div>
+
+                        <div class="search-bar d-flex bg-light py-1">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text"  placeholder="Cerca o inizia una nuova chat">
+                        </div>
+
+                        <ul class="list-group">
+                            <li class="list-group-item" v-for="element in contacts">
+                                <img src="`./img/avatar${contacts.avatar}.jpg`" alt="user image">
+                                <p>{{contacts.name}}</p>
+                                <span class="fs-5 text-secondary">Ultimo messaggio inviato</span>
+                            </li>
+                        </ul>
+
+                        
                             
                     </div>
 
-                    <div class="col-8 vh-100 big-col">
+                    <div class="col-8 big-col">
 
                         <div id="my-chat-wrapper" class="col-12 d-flex justify-content-between align-items-center">
-                            <div class="my-account col-6">
-                                <!--inserire user chat photo-->
+                            <div class="my-chat-account col-6 d-flex">
+                                <img id="my-chat-avatar" class="ms-2" src="./img/avatar" alt="my user image">
+                                <p class="pt-2 px-2"> Nome contatto attivo </p>
+
                             </div>
 
                             <div class="my-chat-tools col-6 text-end">
@@ -51,6 +76,13 @@
                                 <i class="fa-solid fa-paperclip"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
+                        </div>
+
+                        <div id="my-chat-container">
+
+                        </div>
+
+                        <div id="my-chat-text">
 
                         </div>
 
