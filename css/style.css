@@ -6,6 +6,10 @@ main {
     background-color: #eaeaea;
 }
 
+.active-bg {
+    background-color: #e9ebeb;
+}
+
 #my-account-wrapper,
 #my-chat-wrapper,
 #my-chat-text,
@@ -52,26 +56,25 @@ ul span {
 
 .message {
     height: 50px;
-    width: 80%;
+    width: 50%;
     border-radius: 10px;
-    margin: auto;
 }
 
-.msg-wrapper-left {
-    padding-top: 200px;
+.msg-wrapper {
+    padding-top: 40px;
 }
 
-.msg-wrapper-right {
-    padding-top: 50px;
-}
 
 /*classi messaggi*/
 
 .green-msg {
     background-color: #d5f9ba;
-    margin-bottom: 1rem;
+    float: right;
+    margin-right: 50px;
 }
 
 .white-msg {
     background-color: #ffffff;
+    float: left;
+    margin-left: 50px;
 }

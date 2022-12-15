@@ -4,7 +4,7 @@ createApp ( {
     data() {
         
         return {
-            myIndex: 0,
+            activeIndex: 0,
 
             contacts: [
                 {
@@ -176,8 +176,8 @@ createApp ( {
     },
 
     methods: {
-        newItem () {
-        
+        activeChat () {
+           
 
         },
         
