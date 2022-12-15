@@ -43,6 +43,7 @@ width: 100%;
 
 ul {
     list-style-type: none;
+    cursor: pointer;
 }
 
 ul span {
@@ -51,11 +52,10 @@ ul span {
 
 #my-chat-container {
     background-image: url(../img/mine.jpg);
-    height: 800px;
+    height: 600px;
 }
 
 .message {
-    height: 50px;
     width: 50%;
     border-radius: 10px;
 }

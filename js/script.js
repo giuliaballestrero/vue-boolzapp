@@ -176,9 +176,8 @@ createApp ( {
     },
 
     methods: {
-        activeChat () {
-           
-
+        activeChat (chatToActivate) {
+           this.activeIndex = this.contacts.indexOf(chatToActivate);
         },
         
     },

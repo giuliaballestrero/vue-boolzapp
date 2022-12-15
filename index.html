@@ -55,7 +55,7 @@
 
                         <!--Contact section-->
                         <ul class="list-group">
-                            <li class="list-group-item py-2 d-flex" v-for="(contact) in contacts">
+                            <li class="list-group-item py-2 d-flex" v-for="(contact, index) in contacts" @click="activeChat(contact)" :class="(index === activeIndex) ? 'active-bg' : '' ">
                                 <img :src="`./img/avatar${contact.avatar}.jpg`" alt="user image">
                                 <div>
                                     <p class="ps-3 m-0">{{contact.name}}</p>
@@ -70,7 +70,7 @@
                         <!--Chat account section-->
                         <div id="my-chat-wrapper" class="col-12 d-flex justify-content-between align-items-center py-2">
                             <div class="my-chat-account col-6 d-flex">
-                                <img id="my-chat-avatar" class="ms-2" src="./img/avatar" alt="my user image">
+                                <img id="my-chat-avatar" class="ms-2" src="./img/avatar" alt="user image">
                                 <p class="pt-2 px-2"> Nome contatto attivo </p>
 
                             </div>
@@ -90,7 +90,7 @@
 
                                     <div class="msg-wrapper">
                                         <div class="message mb-2" v-for="(message) in contacts[activeIndex].messages" :class="(message.status === 'received') ? 'white-msg' : 'green-msg' ">
-                                            <p class="p-2">
+                                            <p class="ps-3 pt-2">
                                                 {{message.message}}
                                             </p>
                                         </div>
