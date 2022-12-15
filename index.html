@@ -56,10 +56,10 @@
                         <!--Contact section-->
                         <ul class="list-group">
                             <li class="list-group-item py-2 d-flex" v-for="(contact) in contacts">
-                                <img src="`./img/avatar${contact.avatar}.jpg`" alt="user image">
+                                <img :src="`./img/avatar${contact.avatar}.jpg`" alt="user image">
                                 <div>
-                                    <p>{{contact.name}}</p>
-                                    <span class="text-secondary">Ultimo messaggio inviato</span>
+                                    <p class="ps-3 m-0">{{contact.name}}</p>
+                                    <span class="text-secondary ms-3">Ultimo messaggio inviato</span>
                                 </div>
                             </li>
                         </ul>
