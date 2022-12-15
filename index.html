@@ -23,48 +23,52 @@
         <main>
             <div class="container py-5">
                 <div class="row">
-                    <div class="col-4 small-col">
-                        <div id="my-account-wrapper" class="col-12 d-flex justify-content-between align-items-center">
+                    <div class="col-4">
+
+                         <!--My Account section-->
+                        <div id="my-account-wrapper" class="col-12 d-flex justify-content-between align-items-center py-2">
                             <div class="my-account col-6 d-flex">
                                 <img id="my-avatar" class="ms-2" src="./img/avatar_io.jpg" alt="my user image">
                                 <p class="pt-2 px-2">Sofia</p>
                             </div>
 
                             <div class="my-tools col-6 text-end">
-                                <i class="fa-solid fa-circle-notch"></i>
-                                <i class="fa-solid fa-message"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                                <a href="#"><i class="fa-solid fa-message"></i></a>
+                                <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                             </div>
                         </div>
 
-                        <div class="alerts d-flex">
-                            <i class="fa-regular fa-bell-slash fa-lg"></i>
+                        <!--Alert section-->
+                        <div class="alerts d-flex py-2">
+                            <a href="#"><i class="fa-regular fa-bell-slash fa-lg"></i></a>
                             <div>
-                                <p>Ricevi Notifiche di  nuovi messaggi</p>
+                                <p>Ricevi Notifiche di nuovi messaggi</p>
                                 <p class="text-decoration-underline">Attiva notifiche desktop</p>
                             </div>
                         </div>
 
-                        <div class="search-bar d-flex bg-light py-1">
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                        <div class="search-bar d-flex bg-light py-2">
+                            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
                             <input type="text"  placeholder="Cerca o inizia una nuova chat">
                         </div>
 
+                        <!--Contact section-->
                         <ul class="list-group">
-                            <li class="list-group-item" v-for="element in contacts">
-                                <img src="`./img/avatar${contacts.avatar}.jpg`" alt="user image">
-                                <p>{{contacts.name}}</p>
-                                <span class="fs-5 text-secondary">Ultimo messaggio inviato</span>
+                            <li class="list-group-item py-2 d-flex" v-for="(contact) in contacts">
+                                <img src="`./img/avatar${contact.avatar}.jpg`" alt="user image">
+                                <div>
+                                    <p>{{contact.name}}</p>
+                                    <span class="text-secondary">Ultimo messaggio inviato</span>
+                                </div>
                             </li>
                         </ul>
-
-                        
-                            
                     </div>
 
-                    <div class="col-8 big-col">
+                    <div class="col-8">
 
-                        <div id="my-chat-wrapper" class="col-12 d-flex justify-content-between align-items-center">
+                        <!--Chat account section-->
+                        <div id="my-chat-wrapper" class="col-12 d-flex justify-content-between align-items-center py-2">
                             <div class="my-chat-account col-6 d-flex">
                                 <img id="my-chat-avatar" class="ms-2" src="./img/avatar" alt="my user image">
                                 <p class="pt-2 px-2"> Nome contatto attivo </p>
@@ -72,18 +76,55 @@
                             </div>
 
                             <div class="my-chat-tools col-6 text-end">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <i class="fa-solid fa-paperclip"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+                                <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                             </div>
                         </div>
 
+                        <!--Chat container section-->
                         <div id="my-chat-container">
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="msg-wrapper-left">
+
+                                        <div class="message white-msg">
+                                                        
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-6">
+
+                                    <div class="msg-wrapper-right">
+                                        <div class="message green-msg">
+                                    
+                                        </div>
+                                        
+                                        <div class="message green-msg">
+                                                        
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
 
-                        <div id="my-chat-text">
-
+                        <!--Chat Input Section-->
+                        <div class="row" id="my-chat-text">
+                            <div class="col-1">
+                                <a href="#"><i class="fa-regular fa-face-smile"></i></a>
+                            </div>
+                            <div class="col-10">
+                                <input type="text" placeholder="Scrivi un messaggio">
+                            </div>
+                            <div class="col-1">
+                                <a href="#"><i class="fa-solid fa-microphone"></i></a>
+                            </div>
                         </div>
 
                     </div>

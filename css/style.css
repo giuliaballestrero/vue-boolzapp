@@ -2,26 +2,19 @@ main {
     background-color: #dadbd1;
 }
 
-.small-col {
- border: 1px solid white;
+#my-account-wrapper {
+    background-color: #eaeaea;
 }
-
-.big-col {
-    border: 1px solid white;
-} 
 
 #my-account-wrapper,
 #my-chat-wrapper,
 #my-chat-text,
 .alerts
  {
-    border: 1px solid white;
     height: 60px;
-
 }
 
-#my-avatar,
-#my-chat-avatar {
+img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -40,7 +33,7 @@ i {
     font-size: .8rem;
 }
 
-.search-bar input {
+input {
 width: 100%;
 }
 
@@ -48,7 +41,37 @@ ul {
     list-style-type: none;
 }
 
+ul span {
+    font-size: .8rem;
+}
+
 #my-chat-container {
     background-image: url(../img/mine.jpg);
     height: 800px;
+}
+
+.message {
+    height: 50px;
+    width: 80%;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.msg-wrapper-left {
+    padding-top: 200px;
+}
+
+.msg-wrapper-right {
+    padding-top: 50px;
+}
+
+/*classi messaggi*/
+
+.green-msg {
+    background-color: #d5f9ba;
+    margin-bottom: 1rem;
+}
+
+.white-msg {
+    background-color: #ffffff;
 }
