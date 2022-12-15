@@ -89,7 +89,7 @@
                                 <div class="col-12">
 
                                     <div class="msg-wrapper">
-                                        <div class="message green-msg mb-2" v-for="(message) in contacts[activeIndex].messages">
+                                        <div class="message mb-2" v-for="(message) in contacts[activeIndex].messages" :class="(message.status === 'received') ? 'white-msg' : 'green-msg' ">
                                             <p class="p-2">
                                                 {{message.message}}
                                             </p>
