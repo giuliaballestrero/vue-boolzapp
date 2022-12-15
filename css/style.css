@@ -1,0 +1,23 @@
+main {
+    background-color: #dadbd1;
+}
+
+.small-col {
+ height: 90vh;
+ border: 1px solid white;
+}
+
+.big-col {
+    border: 1px solid white;
+} 
+
+#my-account-wrapper,
+#my-chat-wrapper {
+    border: 1px solid white;
+    height: 60px;
+
+}
+
+i {
+    padding: 0 .5rem;
+}
