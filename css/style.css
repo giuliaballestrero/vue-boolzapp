@@ -1,5 +1,16 @@
-main {
-    background-color: #dadbd1;
+body {
+    background-image: 
+    linear-gradient(to bottom,
+    #009688 0px,
+    #009688 15vh,
+    #dddbd1 15vh,
+    #d2dbdc 100%);
+
+    font-family: 'Lato', sans-serif;
+}
+
+#main-wrapper {
+    height: 100vh;
 }
 
 #my-account-wrapper {
@@ -43,10 +54,14 @@ width: 100%;
 
 ul {
     list-style-type: none;
-    cursor: pointer;
 }
 
-ul span {
+ul li {
+    cursor: pointer;
+    border-radius: initial;
+}
+
+span {
     font-size: .8rem;
 }
 
@@ -64,17 +79,23 @@ ul span {
     padding-top: 40px;
 }
 
+.nopadding {
+    padding: 0 !important;
+}
+
 
 /*classi messaggi*/
 
 .green-msg {
     background-color: #d5f9ba;
     float: right;
-    margin-right: 50px;
+    clear: both;
+    margin-right: 60px;
 }
 
 .white-msg {
     background-color: #ffffff;
     float: left;
-    margin-left: 50px;
+    clear: both;
+    margin-left: 60px;
 }

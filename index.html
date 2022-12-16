@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <!--Importing Google Font-->
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
     
     <!--Importing FA-->
     <script src="https://kit.fontawesome.com/ad70f647da.js" crossorigin="anonymous"></script>
@@ -21,9 +21,9 @@
 <body>
     <div  id="app">
         <main>
-            <div class="container py-5">
+            <div id="main-wrapper" class="container py-5">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-4 nopadding bg-light">
 
                          <!--My Account section-->
                         <div id="my-account-wrapper" class="col-12 d-flex justify-content-between align-items-center py-2">
@@ -48,9 +48,9 @@
                             </div>
                         </div>
 
-                        <div class="search-bar d-flex bg-light py-2">
+                        <div class="search-bar d-flex py-2">
                             <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" class="form-control me-2" placeholder="Cerca o inizia una nuova chat">
                         </div>
 
                         <!--Contact section-->
@@ -65,13 +65,16 @@
                         </ul>
                     </div>
 
-                    <div class="col-8">
+                    <div class="col-8 nopadding">
 
                         <!--Chat account section-->
-                        <div id="my-chat-wrapper" class="col-12 d-flex justify-content-between align-items-center py-2">
+                        <div id="my-chat-wrapper" class="col-12 d-flex justify-content-between align-items-center py-2 bg-light">
                             <div class="my-chat-account col-6 d-flex">
-                                <img id="my-chat-avatar" class="ms-2" src="./img/avatar" alt="user image">
-                                <p class="pt-2 px-2"> Nome contatto attivo </p>
+                                <img id="my-chat-avatar" class="ms-2" :src="`./img/avatar${contacts[activeIndex].avatar}.jpg`" alt="user image">
+                                <div>
+                                    <p class="pt-2 ps-3 m-0"> {{contacts[activeIndex].name}} </p>
+                                    <span class="text-secondary pb-2 ps-3">Ultimo accesso oggi alle 12:00</span>
+                                </div>
 
                             </div>
 
@@ -84,32 +87,23 @@
 
                         <!--Chat container section-->
                         <div id="my-chat-container">
-
-                            <div class="row">
-                                <div class="col-12">
-
-                                    <div class="msg-wrapper">
-                                        <div class="message mb-2" v-for="(message) in contacts[activeIndex].messages" :class="(message.status === 'received') ? 'white-msg' : 'green-msg' ">
-                                            <p class="ps-3 pt-2">
-                                                {{message.message}}
-                                            </p>
-                                        </div>
+                            <div class="col-12">
+                                <div class="msg-wrapper">
+                                    <div class="message mb-2" v-for="(message) in contacts[activeIndex].messages" :class="(message.status === 'received') ? 'white-msg' : 'green-msg' ">
+                                        <p class="ps-3 pt-2">
+                                            {{message.message}}
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
+                            </div>    
                         </div>
 
                         <!--Chat Input Section-->
-                        <div class="row" id="my-chat-text">
-                            <div class="col-1">
-                                <a href="#"><i class="fa-regular fa-face-smile"></i></a>
-                            </div>
-                            <div class="col-10">
-                                <input type="text" class="form-control" placeholder="Scrivi un messaggio">
-                            </div>
-                            <div class="col-1">
-                                <a href="#"><i class="fa-solid fa-microphone"></i></a>
-                            </div>
+
+                        <div class="chat-wrapper d-flex bg-light">
+                            <a href="#"><i class="fa-regular fa-face-smile m-2"></i></a>
+                            <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="messageToAdd" @keyup.enter="newMessage">
+                            <a href="#"><i class="fa-solid fa-microphone m-2"></i></a>                   
                         </div>
 
                     </div>

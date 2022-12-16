@@ -6,6 +6,8 @@ createApp ( {
         return {
             activeIndex: 0,
 
+            messageToAdd: '',
+
             contacts: [
                 {
                     name: 'Michele',
@@ -179,6 +181,11 @@ createApp ( {
         activeChat (chatToActivate) {
            this.activeIndex = this.contacts.indexOf(chatToActivate);
         },
+
+        newMessage () {
+            this.contacts[this.activeIndex].messages.push({message:this.messageToAdd, status: 'sent'});
+            this.messageToAdd = '';
+        }
         
     },
 
