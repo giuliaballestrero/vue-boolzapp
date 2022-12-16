@@ -185,9 +185,17 @@ createApp ( {
         newMessage () {
             this.contacts[this.activeIndex].messages.push({message:this.messageToAdd, status: 'sent'});
             this.messageToAdd = '';
-        }
-        
-    },
+            this.autoReply();
+        },
 
+        replyMessage () {
+            this.contacts[this.activeIndex].messages.push({message: 'Ok!', status: 'received'});
+        },
+
+        autoReply () {
+            setTimeout (this.replyMessage, 1000)
+        },
+
+    },
 }).mount('#app');
 
