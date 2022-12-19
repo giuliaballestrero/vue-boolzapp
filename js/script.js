@@ -1,5 +1,7 @@
 const { createApp } = Vue;
 
+const DateTime = luxon.DateTime;
+
 createApp ( {
     data() {
         
@@ -187,13 +189,13 @@ createApp ( {
         },
 
         newMessage () {
-            this.contacts[this.activeIndex].messages.push({message:this.messageToAdd, status: 'sent'});
+            this.contacts[this.activeIndex].messages.push({date:DateTime.now(), message:this.messageToAdd, status: 'sent'});
             this.messageToAdd = '';
             this.autoReply();
         },
 
         replyMessage () {
-            this.contacts[this.activeIndex].messages.push({message: 'Ok!', status: 'received'});
+            this.contacts[this.activeIndex].messages.push({date:DateTime.now(), message: 'Ok!', status: 'received'});
         },
 
         autoReply () {

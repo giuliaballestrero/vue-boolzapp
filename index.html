@@ -55,11 +55,16 @@
 
                         <!--Contact section-->
                         <ul class="list-group">
-                            <li class="list-group-item py-2 d-flex" v-for="(contact, index) in contacts" @click="activeChat(contact)" :class="(index === activeIndex) ? 'active-bg' : '' , (contact.visible === false) ? 'hide-contact' : ''">
+                            <li class="list-group-item py-2 d-flex justify-content-between" v-for="(contact, index) in contacts" @click="activeChat(contact)" :class="(index === activeIndex) ? 'active-bg' : '' , (contact.visible === false) ? 'hide-contact' : ''">
                                 <img :src="`./img/avatar${contact.avatar}.jpg`" alt="user image">
                                 <div>
-                                    <p class="ps-3 m-0">{{contact.name}}</p>
+                                    <p class="ps-3 m-0 name">{{contact.name}}</p>
                                     <span class="text-secondary ms-3">Ultimo messaggio inviato</span>
+                                </div>
+                                <div> 
+                                    <span class="text-right text-secondary">
+                                        12:00 <!--inserire data con luxon-->
+                                    </span> 
                                 </div>
                             </li>
                         </ul>
@@ -73,7 +78,7 @@
                                 <img id="my-chat-avatar" class="ms-2" :src="`./img/avatar${contacts[activeIndex].avatar}.jpg`" alt="user image">
                                 <div>
                                     <p class="pt-2 ps-3 m-0"> {{contacts[activeIndex].name}} </p>
-                                    <span class="text-secondary pb-2 ps-3">Ultimo accesso oggi alle 12:00</span>
+                                    <span class="text-secondary pb-2 ps-3">Ultimo accesso oggi alle {{contacts[activeIndex].messages[0].date}}</span>
                                 </div>
 
                             </div>
@@ -93,6 +98,9 @@
                                         <p class="ps-3 pt-2">
                                             {{message.message}}
                                         </p>
+                                        <span class="float-end text-secondary p-1">
+                                            {{message.date}}
+                                        </span>
                                     </div>
                                 </div>
                             </div>    
@@ -114,11 +122,14 @@
 
     </div>
 
-    
+    <!--Importing Luxon-->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.1/build/global/luxon.min.js"></script>
+
     <!--Importing Vue 3.2-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     
     <!--Importing JS-->
     <script src="./js/script.js"></script>
+
 </body>
 </html>
