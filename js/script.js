@@ -8,8 +8,6 @@ createApp ( {
         return {
             activeIndex: 0,
 
-            userIndex: 0,
-
             messageToAdd: '',
 
             userToSearch: '',
@@ -189,13 +187,15 @@ createApp ( {
         },
 
         newMessage () {
-            this.contacts[this.activeIndex].messages.push({date:DateTime.now(), message:this.messageToAdd, status: 'sent'});
+            let currentDate = DateTime.now().toFormat("dd'/'LL'/'yyyy HH':'mm':'ss");
+            this.contacts[this.activeIndex].messages.push({date: currentDate, message:this.messageToAdd, status: 'sent'});
             this.messageToAdd = '';
             this.autoReply();
         },
 
         replyMessage () {
-            this.contacts[this.activeIndex].messages.push({date:DateTime.now(), message: 'Ok!', status: 'received'});
+            let currentDate = DateTime.now().toFormat("dd'/'LL'/'yyyy HH':'mm':'ss");
+            this.contacts[this.activeIndex].messages.push({date: currentDate, message: 'Ok!', status: 'received'});
         },
 
         autoReply () {

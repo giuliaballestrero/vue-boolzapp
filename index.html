@@ -78,7 +78,7 @@
                                 <img id="my-chat-avatar" class="ms-2" :src="`./img/avatar${contacts[activeIndex].avatar}.jpg`" alt="user image">
                                 <div>
                                     <p class="pt-2 ps-3 m-0"> {{contacts[activeIndex].name}} </p>
-                                    <span class="text-secondary pb-2 ps-3">Ultimo accesso oggi alle {{contacts[activeIndex].messages[0].date}}</span>
+                                    <span class="text-secondary pb-2 ps-3">Ultimo accesso {{contacts[activeIndex].messages[0].date}}</span>
                                 </div>
 
                             </div>
@@ -95,7 +95,7 @@
                             <div class="col-12">
                                 <div class="msg-wrapper">
                                     <div class="message mb-2" v-for="(message) in contacts[activeIndex].messages" :class="(message.status === 'received') ? 'white-msg' : 'green-msg' ">
-                                        <p class="ps-3 pt-2">
+                                        <p class="ps-3 pt-2 mb-0">
                                             {{message.message}}
                                         </p>
                                         <span class="float-end text-secondary p-1">
