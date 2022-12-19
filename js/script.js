@@ -187,15 +187,13 @@ createApp ( {
         },
 
         newMessage () {
-            let currentDate = DateTime.now().toFormat("dd'/'LL'/'yyyy HH':'mm':'ss");
-            this.contacts[this.activeIndex].messages.push({date: currentDate, message:this.messageToAdd, status: 'sent'});
+            this.contacts[this.activeIndex].messages.push({date: this.newDate(), message:this.messageToAdd, status: 'sent'});
             this.messageToAdd = '';
             this.autoReply();
         },
 
         replyMessage () {
-            let currentDate = DateTime.now().toFormat("dd'/'LL'/'yyyy HH':'mm':'ss");
-            this.contacts[this.activeIndex].messages.push({date: currentDate, message: 'Ok!', status: 'received'});
+            this.contacts[this.activeIndex].messages.push({date: this.newDate(), message: 'Ok!', status: 'received'});
         },
 
         deleteMessage(messageToDelete) {
@@ -215,6 +213,11 @@ createApp ( {
                         contact.visible = false;
                     }
             };
+        },
+
+        newDate () {
+            let currentDate = DateTime.now().toFormat("dd'/'LL'/'yyyy HH':'mm':'ss");
+            return currentDate;
         }
 
     },
