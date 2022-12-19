@@ -47,15 +47,15 @@
                                 <p class="text-decoration-underline">Attiva notifiche desktop</p>
                             </div>
                         </div>
-
-                        <div class="search-bar d-flex py-2">
+                        <!--Searchbar section-->
+                        <div class="searchbar d-flex py-2">
                             <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                            <input type="text" class="form-control me-2" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" class="form-control me-2" placeholder="Cerca o inizia una nuova chat" v-model="userToSearch" @keyup.enter="contactFilter">
                         </div>
 
                         <!--Contact section-->
                         <ul class="list-group">
-                            <li class="list-group-item py-2 d-flex" v-for="(contact, index) in contacts" @click="activeChat(contact)" :class="(index === activeIndex) ? 'active-bg' : '' ">
+                            <li class="list-group-item py-2 d-flex" v-for="(contact, index) in contacts" @click="activeChat(contact)" :class="(index === activeIndex) ? 'active-bg' : '' , (contact.visible === false) ? 'hide-contact' : ''">
                                 <img :src="`./img/avatar${contact.avatar}.jpg`" alt="user image">
                                 <div>
                                     <p class="ps-3 m-0">{{contact.name}}</p>
@@ -100,7 +100,7 @@
 
                         <!--Chat Input Section-->
 
-                        <div class="chat-wrapper d-flex bg-light">
+                        <div class="chat-wrapper d-flex bg-light p-1">
                             <a href="#"><i class="fa-regular fa-face-smile m-2"></i></a>
                             <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="messageToAdd" @keyup.enter="newMessage">
                             <a href="#"><i class="fa-solid fa-microphone m-2"></i></a>                   

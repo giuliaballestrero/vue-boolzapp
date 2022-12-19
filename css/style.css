@@ -99,3 +99,7 @@ span {
     clear: both;
     margin-left: 60px;
 }
+
+.hide-contact {
+    display: none !important;
+}

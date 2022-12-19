@@ -6,7 +6,11 @@ createApp ( {
         return {
             activeIndex: 0,
 
+            userIndex: 0,
+
             messageToAdd: '',
+
+            userToSearch: '',
 
             contacts: [
                 {
@@ -195,6 +199,17 @@ createApp ( {
         autoReply () {
             setTimeout (this.replyMessage, 1000)
         },
+
+        contactFilter () {
+           for (let i = 0; i < this.contacts.length; i++) {
+                let contact = this.contacts[i];
+                    if (contact.name.toLowerCase().includes(this.userToSearch.toLowerCase())) {
+                        contact.visible = true;
+                    } else {
+                        contact.visible = false;
+                    }
+            };
+        }
 
     },
 }).mount('#app');
