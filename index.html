@@ -94,7 +94,12 @@
                         <div id="my-chat-container">
                             <div class="col-12">
                                 <div class="msg-wrapper">
-                                    <div class="message mb-2" v-for="(message) in contacts[activeIndex].messages" :class="(message.status === 'received') ? 'white-msg' : 'green-msg' ">
+                                    <div class="message mb-3 dropdown" v-for="(message) in contacts[activeIndex].messages" :class="(message.status === 'received') ? 'white-msg' : 'green-msg' ">
+                                        <a class="btn dropdown-toggle float-end" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Message Info</a></li>
+                                            <li><a class="dropdown-item" href="#">Delete message</a></li>
+                                        </ul>
                                         <p class="ps-3 pt-2 mb-0">
                                             {{message.message}}
                                         </p>
@@ -127,6 +132,9 @@
 
     <!--Importing Vue 3.2-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!--Importing Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     
     <!--Importing JS-->
     <script src="./js/script.js"></script>
