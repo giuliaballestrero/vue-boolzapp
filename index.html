@@ -78,7 +78,7 @@
                                 <img id="my-chat-avatar" class="ms-2" :src="`./img/avatar${contacts[activeIndex].avatar}.jpg`" alt="user image">
                                 <div>
                                     <p class="pt-2 ps-3 m-0"> {{contacts[activeIndex].name}} </p>
-                                    <span class="text-secondary pb-2 ps-3">Ultimo accesso {{contacts[activeIndex].messages[0].date}}</span>
+                                    <span class="text-secondary pb-2 ps-3">Ultimo accesso</span>
                                 </div>
 
                             </div>
@@ -94,11 +94,11 @@
                         <div id="my-chat-container">
                             <div class="col-12">
                                 <div class="msg-wrapper">
-                                    <div class="message mb-3 dropdown" v-for="(message) in contacts[activeIndex].messages" :class="(message.status === 'received') ? 'white-msg' : 'green-msg' ">
+                                    <div class="message mb-3 dropdown" v-for="(message, index) in contacts[activeIndex].messages" :class="(message.status === 'received') ? 'white-msg' : 'green-msg' ">
                                         <a class="btn dropdown-toggle float-end" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#">Message Info</a></li>
-                                            <li><a class="dropdown-item" href="#">Delete message</a></li>
+                                            <li><a class="dropdown-item" href="#" @click="deleteMessage(index)">Delete message</a></li>
                                         </ul>
                                         <p class="ps-3 pt-2 mb-0">
                                             {{message.message}}

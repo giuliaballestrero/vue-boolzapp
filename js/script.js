@@ -198,6 +198,10 @@ createApp ( {
             this.contacts[this.activeIndex].messages.push({date: currentDate, message: 'Ok!', status: 'received'});
         },
 
+        deleteMessage(messageToDelete) {
+            this.contacts[this.activeIndex].messages.splice(messageToDelete, 1)
+        },
+
         autoReply () {
             setTimeout (this.replyMessage, 1000)
         },
